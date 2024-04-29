@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>웹 페이지</title>
+<script>
+window.onload = function() {
+  // 초기 번호 설정
+  var number = 1;
+  // 번호를 표시할 요소를 가져옴
+  var numberElement = document.getElementById("number");
+
+  // 3초마다 번호를 변경하는 함수
+  function changeNumber() {
+    number++; // 다음 번호로 이동
+    // 번호가 10보다 크면 다시 1로 되돌아감
+    if (number > 10) {
+      number = 1;
+    }
+    // 변경된 번호를 요소에 표시
+    numberElement.innerText = number;
+  }
+
+  // 매 3초마다 changeNumber 함수를 호출하여 번호 변경
+  setInterval(changeNumber, 3000);
+}
+</script>
+</head>
+<body>
+
+<p>현재 번호:</p>
+<p id="number">1</p>
+
+</body>
+</html>
